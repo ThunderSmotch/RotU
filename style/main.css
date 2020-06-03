@@ -1,7 +1,12 @@
+:root{
+    --btn-color: rgb(179, 179, 179);
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     height:100%;
-    margin: 0;
+    margin: 20px;
+    user-select: none;
 }
 
 .footer {
@@ -14,6 +19,27 @@ body {
     width: 100%;
 }
 
-.footer > a{
-    margin-right: 20px;
+.footer > a {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/****************************************************************/
+/*  Button Code */
+
+.button {
+    border: 2px;
+    border-style: solid;
+    
+    width: 100px;
+    height: 30px;
+
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+}
+
+.button:hover{
+    background-color: var(--btn-color);
+    text-decoration: underline gray;
 }
