@@ -10,7 +10,7 @@ import {Storage} from './elements/storage.js'
 
 let version = "v0.1";
 
-//TODO: Storage Save/Export/Load Game Achievements
+//TODO: Save/Export/Load Game      Achievements
 
 //TODO: Use flexbox to handle dynamic resolutions
 
@@ -18,6 +18,8 @@ window.onload = function(){
     initModules();
 
     setTooltipDefaultProps();
+
+    StateManager.loadState();
 
     //TestCode still
     var testButton = Button.createCooldownButton('test', _('button.gatherHerbs'), '0.5s');
@@ -36,6 +38,7 @@ window.onload = function(){
 
     //Update Intervals
     this.setInterval(() => Storage.update(), 1000);
+    this.setInterval(() => StateManager.saveState(), 5000);
 
     Chat.addMessage(_('chat.gameLoaded'));
 }
