@@ -4,6 +4,8 @@ import {Tooltip} from './elements/tooltip.js';
 
 let version = "v0.1";
 
+//TODO: Save/Export/Load Game    Achievements    Storage
+
 window.onload = function(){
     Footer.init(version);
     
@@ -11,7 +13,7 @@ window.onload = function(){
 
     var testButton = Button.createCooldownButton('test', 'Gather plants', '0.5s')
 
-    $('.main').append(testButton);
+    $('.mainCol').append(testButton);
 
     Tooltip.addTooltip('#test', 'Gather some W33D')
 }
