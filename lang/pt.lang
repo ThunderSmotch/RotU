@@ -1,5 +1,9 @@
 {
     "button.gatherHerbs": "Apanhar Erva",
+    "tooltip.gatherHerbs": "Apanhar erva da boa...",
     "chat.gatherHerbs":"Tu apanhas algumas ervas...",
-    "chat.gameLoaded": "Jogo Carregado"
+    "chat.gameLoaded": "Jogo Carregado",
+    "settings.Title": "Configurações",
+    "settings.Lang": "Idioma:",
+    "settings.LangWarning": "(Atualiza a página)"
 }

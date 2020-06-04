@@ -1,7 +1,7 @@
 export var Lang = {
     init: () => init(),
     loadLang: (lang) => loadLang(lang),
-    translate: (key) => translate(key),
+    translate: (key, ...args) => translate(key, args),
     getLang: (lang) => getLang()
 }
 
@@ -40,14 +40,30 @@ function loadLang(lang){
 
 //Translates a key to string and returns it
 //If key does not exist then return the english text as fallback
-function translate(key){
+function translate(key, args){
+    var val = langJSON[key];
     try {
-        var val = langJSON[key];
         if(val == undefined) val = enJSON[key];
+        val = parseText(val, args);
         return val;
     } catch (error) {
-        console.log("ERROR: Could not translate key!")
+        console.log(`ERROR: Could not translate key! Key:${key}||Value:${val}`);
+        console.log(`Error ${error.name}:${error.message}`);
     }
+}
+
+//Parses text substituting variable values
+function parseText(text, args){
+    if(args.length == 0) return text;
+
+    var matches = text.matchAll(/\${(\d+):.+?}/g);
+
+    for(const match of matches){
+        text = text.replace(match[0], args[match[1]])
+        console.log(text)
+    }
+
+    return text;
 }
 
 //Returns current language ('en' by default)
