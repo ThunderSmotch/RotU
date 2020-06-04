@@ -10,7 +10,9 @@ import {Storage} from './elements/storage.js'
 
 let version = "v0.1";
 
-//TODO: Save/Export/Load Game      Achievements
+//TODO: Export/Import/Wipe | Achievements
+
+//TODO: Handle savefiles cross versions
 
 //TODO: Use flexbox to handle dynamic resolutions
 
@@ -19,9 +21,10 @@ window.onload = function(){
 
     setTooltipDefaultProps();
 
+    //Load game from local storage
     StateManager.loadState();
 
-    //TestCode still
+    //TestCode still///////////////////
     var testButton = Button.createCooldownButton('test', _('button.gatherHerbs'), '0.5s');
     var numHerbs = 1;
     $('#mainCol').append(testButton);
@@ -33,8 +36,7 @@ window.onload = function(){
     });
 
     Tooltip.addTooltip('#test', _('tooltip.gatherHerbs', numHerbs, numHerbs))
-
-    //End of TestCode
+    //End of TestCode//////////////////
 
     //Update Intervals
     this.setInterval(() => Storage.update(), 1000);
