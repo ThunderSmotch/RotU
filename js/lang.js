@@ -19,7 +19,7 @@ function init(){
 //TODO: Synchronous requests are deprecated. Handle this.
 function loadLang(lang){
     if(langs.includes(lang)){
-        $.ajax(`/lang/${lang}.lang`,{
+        $.ajax(`lang/${lang}.lang`,{
             async: false,
             success: (data) => { langJSON = JSON.parse(data); },
             error: () => {console.log("ERROR: Could not load language.")}

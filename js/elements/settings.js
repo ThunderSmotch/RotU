@@ -2,7 +2,7 @@ export var Settings = {
     init: () => init()
 }
 
-//TODO: 
+//TODO: Add available langs to the select element
 
 function init(){
 
