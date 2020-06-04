@@ -5,7 +5,7 @@ import {Chat} from './elements/chat.js';
 
 let version = "v0.1";
 
-//TODO: Save/Export/Load Game    Achievements    Storage   Clear chat
+//TODO: Storage Localization  Save/Export/Load Game Achievements
 
 window.onload = function(){
     Footer.init(version);
