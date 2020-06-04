@@ -171,3 +171,21 @@ body {
 
     z-index: 10;
 }
+
+/*************************/
+/* STORAGE   */
+
+#storage {
+    border-top-style: solid;
+    border-width: 1px;
+}
+
+.resource {
+    display: flex;
+}
+
+.resource_amount{
+    padding-left: 10px;
+    position: relative;
+    float: right;
+}

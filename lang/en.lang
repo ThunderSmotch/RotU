@@ -1,9 +1,10 @@
 {
     "button.gatherHerbs": "Gather Herbs",
-    "tooltip.gatherHerbs": "${0:num} herbs ${1:herbs}",
+    "tooltip.gatherHerbs": "Find ${0:num} herbs",
     "chat.gatherHerbs":"You gather some herbs...",
     "chat.gameLoaded": "Game Loaded",
     "settings.Title": "Settings",
     "settings.Lang": "Language:",
-    "settings.LangWarning": "(Will refresh page)"
+    "settings.LangWarning": "(Will refresh page)",
+    "resource.herb":"Herbs"
 }

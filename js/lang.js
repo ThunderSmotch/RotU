@@ -60,7 +60,6 @@ function parseText(text, args){
 
     for(const match of matches){
         text = text.replace(match[0], args[match[1]])
-        console.log(text)
     }
 
     return text;

@@ -1,16 +1,18 @@
 import {Lang} from './lang.js';
+import {StateManager} from './stateManager.js';
+
 import {Footer} from './elements/footer.js';
 import {Settings} from './elements/settings.js';
 import {Button} from './elements/button.js';
 import {Tooltip} from './elements/tooltip.js';
 import {Chat} from './elements/chat.js';
+import {Storage} from './elements/storage.js'
 
 let version = "v0.1";
 
-//TODO: Storage Localization with variables  Save/Export/Load Game Achievements
+//TODO: Storage Save/Export/Load Game Achievements
 
-//TODO: Use flexbox to handle dynamics resolution
-
+//TODO: Use flexbox to handle dynamic resolutions
 
 window.onload = function(){
     initModules();
@@ -23,12 +25,17 @@ window.onload = function(){
     $('#mainCol').append(testButton);
 
     testButton.click(()=>{
+        StateManager.updateResource('herb', numHerbs);
+        Storage.update();
         Chat.addMessage(_('chat.gatherHerbs'));
     });
 
     Tooltip.addTooltip('#test', _('tooltip.gatherHerbs', numHerbs, numHerbs))
 
     //End of TestCode
+
+    //Update Intervals
+    this.setInterval(() => Storage.update(), 1000);
 
     Chat.addMessage(_('chat.gameLoaded'));
 }
@@ -40,6 +47,7 @@ function initModules(){
     Footer.init(version);
     Settings.init();
     Chat.init();
+    Storage.init();
 }
 
 function setTooltipDefaultProps(){
