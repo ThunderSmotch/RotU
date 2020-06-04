@@ -1,5 +1,6 @@
 import {Lang} from './lang.js';
 import {Footer} from './elements/footer.js';
+import {Settings} from './elements/settings.js';
 import {Button} from './elements/button.js';
 import {Tooltip} from './elements/tooltip.js';
 import {Chat} from './elements/chat.js';
@@ -8,15 +9,15 @@ let version = "v0.1";
 
 //TODO: Storage Localization  Save/Export/Load Game Achievements
 
-window.onload = function(){
-    Lang.init();
-    window._ = Lang.translate;
+//TODO: Use flexbox to handle dynamics resolution
 
-    Footer.init(version);
-    Chat.init();
+
+window.onload = function(){
+    initModules();
 
     setTooltipDefaultProps();
 
+    //TestCode still
     var testButton = Button.createCooldownButton('test', _('button.gatherHerbs'), '0.5s');
 
     $('#mainCol').append(testButton);
@@ -25,10 +26,20 @@ window.onload = function(){
         Chat.addMessage(_('chat.gatherHerbs'));
     });
 
-    Tooltip.addTooltip('#test', 'Gather some W33D')
+    Tooltip.addTooltip('#test', _('tooltip.gatherHerbs'))
 
-    Chat.addMessage("Game loaded.");
-    Chat.addMessage("There's still no gameplay. Hold tight!")
+    //End of TestCode
+
+    Chat.addMessage(_('chat.gameLoaded'));
+}
+
+function initModules(){
+    Lang.init();
+    window._ = Lang.translate;
+
+    Footer.init(version);
+    Settings.init();
+    Chat.init();
 }
 
 function setTooltipDefaultProps(){

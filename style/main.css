@@ -151,3 +151,23 @@ body {
     pointer-events: none;
     overflow: hidden;
 }
+
+/**********************************/
+/* POPUP */
+
+.popup {
+    border-style: solid;
+    border-width: 2px;
+
+    display: flexbox;
+
+    padding: 20px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+
+    z-index: 10;
+}

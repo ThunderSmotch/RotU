@@ -1,5 +1,8 @@
 {
     "button.gatherHerbs": "Gather Herbs",
+    "tooltip.gatherHerbs": "Gather sum W33D",
     "chat.gatherHerbs":"You gather some herbs...",
-    "chat.gameLoaded": "Game Loaded"
+    "chat.gameLoaded": "Game Loaded",
+    "settings.Title": "Settings",
+    "settings.Lang": "Language:"
 }
