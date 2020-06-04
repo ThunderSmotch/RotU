@@ -2,19 +2,19 @@ export var Button = {
     init: function(){
 
     },
-    create: (id) => getButtonHTML(id),
+    create: (id, text) => getButtonHTML(id, text),
 
     createCooldownButton: (id, cd) => createCooldownButton(id, cd)
 }
 
-function getButtonHTML(id){
-    return `<div class='button' id='${id}'>Test Button<div class='buttonBG'><div></div>`;
+function getButtonHTML(id, text){
+    return `<div class='button' id='${id}'>${text}<div class='buttonBG'><div></div>`;
 }
 
 //Creates a button of the type Cooldown (has a BG cooldown bar)
-function createCooldownButton(id, cd){
+function createCooldownButton(id, text, cd){
 
-    var newButton = $(Button.create(id)).click(function(){
+    var newButton = $(Button.create(id, text)).click(function(){
         
         var button = $(this);
         var buttonBG = $(this).children().eq(0);
