@@ -4,12 +4,18 @@ export var Chat = {
 }
 
 function initChat(){
-    var chat = `<div id='chat'></div>`;
+    var chat = `<a href='#' style='float: right' id='clearChat'>clear chat</a>
+    <div id='chat'></div>`;
+
     $("#chatCol").append(chat);
-    addMessage("Game loaded.")
+    $("#clearChat").click(clearChat);
 }
 
 function addMessage(msg){
     var message = `<div class="message">${msg}</div>`;
     $('#chat').prepend(message);
+}
+
+function clearChat(){
+    $('.message').remove();
 }

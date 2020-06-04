@@ -22,6 +22,9 @@ window.onload = function(){
     });
 
     Tooltip.addTooltip('#test', 'Gather some W33D')
+
+    Chat.addMessage("Game loaded.");
+    Chat.addMessage("There's still no gameplay. Hold tight!")
 }
 
 function setTooltipDefaultProps(){
