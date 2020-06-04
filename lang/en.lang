@@ -4,5 +4,6 @@
     "chat.gatherHerbs":"You gather some herbs...",
     "chat.gameLoaded": "Game Loaded",
     "settings.Title": "Settings",
-    "settings.Lang": "Language:"
+    "settings.Lang": "Language:",
+    "settings.LangWarning": "(Will refresh page)"
 }
