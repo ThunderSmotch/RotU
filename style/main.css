@@ -30,33 +30,33 @@ body {
     margin-left: 10px;
 }
 
-.main{
+#main{
     width: 100%;
     height: 100%;
     display: flex;
 }
 
-.row:after {
+#main:after {
     content: "";
     display: table;
     clear: both;
   }
 
-.inventoryCol{
+#inventoryCol{
     float:left;
-    width:25%;
+    width:24%;
     height:100%;
 }
 
-.mainCol{
+#mainCol{
     float:left;
-    width:55%;
+    width:49%;
     height:100%;
 }
 
-.chatCol{
+#chatCol{
     float:right;
-    width:25%;
+    width:24%;
     height:100%;
 }
 
@@ -124,4 +124,28 @@ body {
   color: black;
   border-width: 2px;
   border-style: double;
+}
+
+/**************************/
+/* CHAT */
+
+#chat{
+    border-top-style: solid;
+    border-width: 1px;
+    height: 50%;
+    overflow: hidden;
+}
+
+#chat:after{
+    position: absolute;
+    top: 0;  
+    height: 70%;
+    width: 100%;
+    content: "";
+    background: linear-gradient(0deg,
+       rgba(255,255,255, 1) 0%,
+       rgba(255,255,255, 0) 100%
+    );
+    pointer-events: none;
+    overflow: hidden;
 }
