@@ -1,5 +1,6 @@
 :root{
     --btn-color: rgb(179, 179, 179);
+    --btn-color-text: rgb(122, 122, 122);
 }
 
 body {
@@ -28,18 +29,54 @@ body {
 /*  Button Code */
 
 .button {
+    position: relative;
     border: 2px;
     border-style: solid;
     
     width: 100px;
     height: 30px;
 
-    vertical-align: middle;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 10px;
+
     text-align: center;
-    display: table-cell;
+    background-color: white;
 }
 
 .button:hover{
-    background-color: var(--btn-color);
     text-decoration: underline gray;
+    cursor: pointer;
+
+    background-color: var(--btn-color);
+}
+
+.button.disabled, .button.disabled:hover{
+
+    text-decoration: none;
+    border-color: var(--btn-color);
+    color: var(--btn-color-text);
+    cursor: initial;
+
+    background-color: transparent;
+}
+
+.button.disabled > .buttonBG {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    background-color: var(--btn-color);
+
+    animation-name: cooldown;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cooldown {
+    from {width:100%}
+    to {width:0%}
 }
