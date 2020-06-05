@@ -9,6 +9,7 @@
     "settings.LangWarning": "(Will refresh page)",
     "settings.Export": "Export Save",
     "settings.Import": "Import Save",
+    "settings.Import.error": "Error whilst importing save! You sure this is a real savefile?",
     "settings.Wipe": "Wipe Save",
     "settings.Wipe.description": "Will wipe ALL your progress and restart you over. Are you sure?",
     

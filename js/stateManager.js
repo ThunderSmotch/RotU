@@ -9,6 +9,7 @@ export var StateManager = {
 
 //Default game state
 var gameState = {
+    rotu: true,
     storage: {
         herb: 0
     },
@@ -31,12 +32,18 @@ function loadState(){
     }
 }
 
-function importState(state = localStorage.getItem('save')){
-    //TODO: Check if save is safe    
+function importState(state){
     if(state != null){
-        gameState = JSON.parse(atob(state));
-        saveState();
-        location.reload();
+        let importedState = JSON.parse(atob(state));
+        console.log(importedState)
+        if(importedState.hasOwnProperty('rotu')){
+            gameState = importedState;
+            saveState();
+            location.reload();
+        } else{
+            alert(_('settings.Import.error'))
+        }
+        
     }
 }
 

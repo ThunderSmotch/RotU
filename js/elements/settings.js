@@ -27,6 +27,7 @@ function getSettingsHTML(){
     <span>${_('settings.LangWarning')}</span>
     <br>
     <hr>
+    <input type="file" style="display: none;" id="fileInput"></input>
     <a href='#' id='exportGame'>${_('settings.Export')}</a> | 
     <a href='#' id='importGame'>${_('settings.Import')}</a> | 
     <a href='#' id='wipeGame'>${_('settings.Wipe')}</a> | 
@@ -66,15 +67,15 @@ function initStateOptions(){
     });
 
     //Import
+    var fileReader = new FileReader();
+    fileReader.onload = () => StateManager.importState(fileReader.result);
+    let a = $('#fileInput');
+    a.on('change', ()=>{
+        fileReader.readAsText($('#fileInput').prop('files')[0]);
+    });
+
     $('#importGame').click(() => {
-        var fileReader = new FileReader();
-        let a = $('<input type="file" style="display: none;" id="fileInput"></input>');
-        $('body').append(a);
-        a.on('change', ()=>{
-            fileReader.onload = () => StateManager.importState(fileReader.result);
-            fileReader.readAsText($('#fileInput').prop('files')[0]);
-        });
-        a.click();
+        $('#fileInput').click();
     });
 
     //Wipe Game

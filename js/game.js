@@ -10,7 +10,7 @@ import {Storage} from './elements/storage.js'
 
 let version = "v0.1";
 
-//TODO: Export/Import | Achievements | Loading Screen
+//TODO: Achievements | Loading Screen
 
 //TODO: Handle savefiles cross versions
 
