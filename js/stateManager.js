@@ -3,6 +3,7 @@ export var StateManager = {
     getState: () => {return gameState;},
     saveState: () => saveState(),
     loadState: (state) => loadState(state),
+    wipeState: () => wipeState(),
 }
 
 //Default game state
@@ -25,4 +26,8 @@ function saveState(){
 function loadState(state = localStorage.getItem('save')){
     if(state != null)
         gameState = JSON.parse(atob(state));
+}
+
+function wipeState(){
+    localStorage.removeItem('save');
 }
