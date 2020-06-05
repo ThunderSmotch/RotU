@@ -12,7 +12,7 @@ function init(){
     $("#settingsButton, #settingsToggle").click(()=>{
         $("#settings").toggle();
     });
-    
+     
     initLangSelect();
     initStateOptions();
 }
@@ -67,11 +67,13 @@ function initStateOptions(){
 
     //Import
     $('#importGame').click(() => {
-
-        const a = document.createElement('input');
-        a.setAttribute('type', 'file');
-        a.setAttribute('style', 'display: none;');
-        a.setAttribute('id', 'fileInput');
+        var fileReader = new FileReader();
+        let a = $('<input type="file" style="display: none;" id="fileInput"></input>');
+        $('body').append(a);
+        a.on('change', ()=>{
+            fileReader.onload = () => StateManager.importState(fileReader.result);
+            fileReader.readAsText($('#fileInput').prop('files')[0]);
+        });
         a.click();
     });
 
