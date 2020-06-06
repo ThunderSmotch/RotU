@@ -4,7 +4,7 @@ export var Chat = {
 }
 
 function initChat(){
-    var chat = `${_('game.Chat')}<a href='#' style='float: right' id='clearChat'>${_('game.Chat.Clear')}</a>
+    let chat = `${_('game.Chat')}<a href='#' style='float: right' id='clearChat'>${_('game.Chat.Clear')}</a>
     <div id='chat'></div>`;
 
     $("#chatCol").append(chat);
@@ -12,7 +12,7 @@ function initChat(){
 }
 
 function addMessage(msg){
-    var message = `<div class="message">${msg}</div>`;
+    let message = `<div class="message">${msg}</div>`;
     $('#chat').prepend(message);
 }
 
