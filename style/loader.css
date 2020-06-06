@@ -137,3 +137,23 @@
   #moon {
     font-size: 1.5vw;
   }
+
+  #loaderTitle {
+    letter-spacing: 1vw;
+    font-family: "Source Sans Pro", sans-serif;
+    animation: reveal 500ms ease-out forwards 500ms,
+               glow 2000ms linear infinite 1000ms;
+  } 
+
+  @keyframes reveal {
+    80%{
+    }
+    100% {
+      letter-spacing: 0px;
+    }
+  }
+  @keyframes glow {
+    40% {
+      text-shadow: 0 0 8px #fff;
+    }
+  }
