@@ -1,0 +1,139 @@
+/* Background */
+
+/********************************/
+/* Loading Screen */
+
+#loader{
+    z-index: 100;
+    position: absolute;
+    width: 98%;
+    height: 100%;
+    background-color: #030035;
+    display: flexbox;
+}
+
+#loaderTitle {
+    position: relative;
+    top: 20%;
+    z-index: 100;
+    font-size: 5vw;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    text-decoration: underline overline double yellow;
+}
+
+#loadingMessage
+{
+    position: relative;
+    top: 60%;
+    z-index: 100;
+    font-size: 1.5vw;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+}
+#universe {
+    z-index: 100;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    right: 0;
+    left: 0;
+    top: 30%;
+}
+
+  #galaxy {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(75deg) rotateY(30deg);
+    transform-style: preserve-3d;
+  }
+
+  #earth, .moon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+  }
+
+  #earth {
+    background-color: #F18C1D;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotateX(-75deg);
+  }
+
+  .pos {
+    position: absolute;
+    transform-style: preserve-3d;
+    animation-name: invert;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  .moon {
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  .orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 8px solid grey;
+    border-radius: 50%;
+    animation-name: orbit;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-style: preserve-3d;
+  }
+
+  /* Animations */
+  @keyframes orbit {
+    0%   { transform: rotateZ(0deg); }
+    100% { transform: rotateZ(-360deg); }
+  }
+
+  @keyframes invert {
+    0%   { transform: rotateX(-90deg) rotateY(360deg) rotateZ(0deg); }
+    100% { transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg); }
+  }
+
+  /* Orbit sizes */
+  #moon.orbit {
+    width: 20vw;
+    height: 20vw;
+    margin-top: -10vw;
+    margin-left: -10vw;
+  }
+
+  /* Planet starting positions */
+  #moon .pos {
+    left: 50%;
+    top: -1px;
+    border: solid 3px white;
+  }
+
+  /* Planet animation durations */
+  #moon.orbit, #moon .pos {
+    animation-duration: 4s;
+  }
+
+  /* Planet sizes */
+  #earth {
+    font-size: 10vw;
+  }
+  #moon {
+    font-size: 1.5vw;
+  }

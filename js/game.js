@@ -42,6 +42,7 @@ window.onload = function(){
     this.setInterval(() => Storage.update(), 1000);
     this.setInterval(() => StateManager.saveState(), 5000);
 
+    //$('#loader').css('display', 'none');
     Chat.addMessage(_('chat.gameLoaded'));
 }
 
