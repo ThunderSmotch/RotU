@@ -1,8 +1,13 @@
 {
+    "game.Storage":"Storage",
+    "game.Chat":"Log",
+    "game.Chat.Clear":"clear log",
+
+    "chat.gameLoaded": "Game Loaded",
+
     "button.gatherHerbs": "Gather Herbs",
     "tooltip.gatherHerbs": "Find ${0:num} herbs",
     "chat.gatherHerbs":"You gather some herbs...",
-    "chat.gameLoaded": "Game Loaded",
 
     "settings.Title": "Settings",
     "settings.Lang": "Language:",

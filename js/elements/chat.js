@@ -4,7 +4,7 @@ export var Chat = {
 }
 
 function initChat(){
-    var chat = `<a href='#' style='float: right' id='clearChat'>clear chat</a>
+    var chat = `${_('game.Chat')}<a href='#' style='float: right' id='clearChat'>${_('game.Chat.Clear')}</a>
     <div id='chat'></div>`;
 
     $("#chatCol").append(chat);

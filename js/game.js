@@ -9,10 +9,9 @@ import {Chat} from './elements/chat.js';
 import {Storage} from './elements/storage.js'
 
 let version = "v0.1";
+//TODO: Achievements | Timestamp on chat messages
 
-//TODO: Achievements | Loading Screen
-
-//TODO: Handle savefiles cross versions
+//TODO: Handle savefiles cross versions maybe using jquery.extend(true,...)
 
 //TODO: Use flexbox to handle dynamic resolutions
 

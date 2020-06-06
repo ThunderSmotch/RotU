@@ -27,7 +27,7 @@ function update(){
 
 //Returns storage HTML
 function getStorageHTML(){
-    return `<div id='storage'></div>`;
+    return `${_('game.Storage')}<div id='storage'></div>`;
 }
 
 //Returns a resource's HTML
