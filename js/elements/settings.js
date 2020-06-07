@@ -1,5 +1,6 @@
 import {langs, Lang} from '../lang.js';
 import { StateManager } from '../stateManager.js';
+import {Popup} from './popup.js';
 
 export var Settings = {
     init: () => init()
@@ -7,9 +8,8 @@ export var Settings = {
 
 function init(){
 
-    $("body").append(getSettingsHTML());
-
-    $("#settingsButton, #settingsToggle").click(()=>{
+    Popup.create('settings', getSettingsHTML());
+    $("#settingsButton").click(()=>{
         $("#settings").toggle("fast");
     });
      
@@ -18,9 +18,7 @@ function init(){
 }
 
 function getSettingsHTML(){
-    return `<div id='settings' class='popup' style='display: none;'>
-    <a href='#' style='float:right;' id='settingsToggle'>X</a>
-    <h3 style='display: inline-block;'>${_('settings.Title')}</h3>
+    return `<h3 style='display: inline-block;'>${_('settings.Title')}</h3>
     <br>
     <span>${_('settings.Lang')}</span>
     <select name='langs' id='langSelect'></select>
@@ -30,8 +28,7 @@ function getSettingsHTML(){
     <input type="file" style="display: none;" id="fileInput"></input>
     <a href='#' id='exportGame'>${_('settings.Export')}</a> | 
     <a href='#' id='importGame'>${_('settings.Import')}</a> | 
-    <a href='#' id='wipeGame'>${_('settings.Wipe')}</a> | 
-    </div>`;
+    <a href='#' id='wipeGame'>${_('settings.Wipe')}</a> |`;
 }
 
 function initLangSelect(){

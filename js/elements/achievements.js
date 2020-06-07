@@ -1,5 +1,6 @@
 import {Tooltip} from './tooltip.js'
 import {StateManager} from '../stateManager.js';
+import {Popup} from './popup.js';
 
 export var Achievements = {
     init: () => init(),
@@ -16,8 +17,9 @@ function unlock(i){
 
 function init(){
     //Setup popup
-    $("body").append(getAchievementsHTML());
-    $("#achievementsButton, #achievementsToggle").click(()=>{
+    Popup.create('achievements', getAchievementsHTML())
+
+    $("#achievementsButton").click(()=>{
         $("#achievements").toggle("fast");
     });
 
@@ -33,12 +35,9 @@ function init(){
 }
 
 function getAchievementsHTML(){
-    return `<div id='achievements' class='popup' style='display: none;'>
-    <a href='#' style='float:right; position:sticky; top:0;' id='achievementsToggle'>X</a>
-    <h3 style='display: inline-block;'>${_('achievements.Title')}</h3>
+    return `<h3 style='display: inline-block;'>${_('achievements.Title')}</h3>
     <br>
-    <div id='achievementContainer'></div>
-    </div>`;
+    <div id='achievementContainer'></div>`;
 }
 
 function getAchievementHTML(id){

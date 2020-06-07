@@ -10,7 +10,7 @@ import {Storage} from './elements/storage.js';
 import {StageManager} from './stageManager.js';
 
 let version = "v0.1";
-//TODO: Different styling for messages | Popups for new achievement gained on the Stage Manager
+//TODO: Different styling for messages | Popups for new achievement gained on the Stage Manager | Header
 
 //TODO: Add images to the achievements
 

@@ -1,7 +1,5 @@
 import {Achievements} from './elements/achievements.js';
 
-
-
 export var StateManager = {
     updateResource: (key, qty) => updateResource(key, qty),
     unlockAchievement: (id) => unlockAchievement(id),
@@ -35,7 +33,6 @@ function unlockAchievement(id){
 
     Achievements.unlock(id);
     gameState['achievements'].push(id);
-    //TODO Popup for new achievement gained
 }
 
 function updateResource(key, qty){
