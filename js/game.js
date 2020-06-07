@@ -9,6 +9,7 @@ import {Tooltip} from './elements/tooltip.js';
 import {Chat} from './elements/chat.js';
 import {Storage} from './elements/storage.js';
 import {StageManager} from './stageManager.js';
+import { Keybinds } from './elements/keybinds.js';
 
 let version = "v0.1";
 //TODO: Different styling for messages
@@ -43,6 +44,8 @@ function initModules(){
     Achievements.init();
     Chat.init();
     Storage.init();
+
+    Keybinds.init();
 }
 
 function setUpdateIntervals(){
