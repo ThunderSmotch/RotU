@@ -50,7 +50,7 @@ function wakeUpButtonClick(){
         case 15:
             Chat.addMessage(_('stage0.Sleeping3'));
             $('#inventoryCol').show('slow');
-            Chat.addMessage(_('stage0.End'));
+            Chat.clearChat();
             StateManager.unlockAchievement(1);
             StageManager.unlockStage(1);
             break;

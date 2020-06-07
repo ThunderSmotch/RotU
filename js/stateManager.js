@@ -4,7 +4,8 @@ import { Popup } from './elements/popup.js';
 export var StateManager = {
     updateResource,
     unlockAchievement,
-    
+    setName,
+
     unlockStage,
     
     saveState,
@@ -22,7 +23,13 @@ var gameState = {
     },
     achievements:[],
     stage: 0,
+    name: "",
 };
+
+//Set player name
+function setName(name){
+    gameState.name = name;
+}
 
 //Change current stage
 function unlockStage(i){
@@ -78,4 +85,5 @@ function importState(state){
 //Remove saved game state on local storage
 function wipeState(){
     localStorage.removeItem('save');
+    console.log('Deleted save');
 }

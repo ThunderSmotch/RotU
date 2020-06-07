@@ -50,5 +50,5 @@ function initModules(){
 
 function setUpdateIntervals(){
     setInterval(() => Storage.update(), 1000);
-    setInterval(() => StateManager.saveState(), 5000);
+    setInterval(() => StateManager.saveState(), 10000);
 }

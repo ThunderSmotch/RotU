@@ -13,9 +13,11 @@ function init(){
 }
 
 //Add new message to the chat
-function addMessage(msg){
+function addMessage(msg, delay=0){
     let message = $(`<div style="display: none;" class="message">${msg}</div>`);
-    message.prependTo('#chat').show('slow');
+    setTimeout(() => {
+        message.prependTo('#chat').show('slow');    
+    }, delay*1000);
 }
 
 //Clear all messages

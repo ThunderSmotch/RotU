@@ -3,25 +3,14 @@
     "game.Chat":"Log",
     "game.Chat.Clear":"clear log",
 
-    "button.WakeUp": "Wake Up",
-    "tooltip.WakeUp": "You can't sleep forever!",
-    "stage0.Header":"Rule over your dreams.",
-    "stage0.Sleeping": "... ZzZzZzZzZ ...",
-    "stage0.Sleeping2": ".........",
-    "stage0.Sleeping3": "You finally wake up!",
-    "stage0.End": "You should probably gather some supplies...",
-
-    "stage1.Header":"Rule over yourself.",
-
-    "button.gatherHerbs": "Gather Herbs",
-    "tooltip.gatherHerbs": "Find ${0:num} herbs",
-    "chat.gatherHerbs":"You gather some herbs...",
-
     "achievements.Title":"Achievements",
     "achievements.Unlock":"Achievement Unlocked!",
-    "achievements.1.Name":"You waked up!",
+    "achievements.1.Name":"You're awake!",
     "achievements.1.Description":"How else would you rule the Universe?",
     "achievements.1.Tip":"Just wake up dude...",
+    "achievements.2.Name":"A sense of identity.",
+    "achievements.2.Description":"Next up, politics! Left or Right?",
+    "achievements.2.Tip":"Define yourself!",
 
     "settings.Title": "Settings",
     "settings.Lang": "Language:",
@@ -32,5 +21,31 @@
     "settings.Wipe": "Wipe Save",
     "settings.Wipe.description": "Will wipe ALL your progress and restart you over. Are you sure?",
     
-    "resource.herb":"Herbs"
+    "button.WakeUp": "Wake Up",
+    "tooltip.WakeUp": "You can't sleep forever!",
+    "stage0.Header":"Ruler of your dreams",
+    "stage0.Sleeping": "... ZzZzZzZzZ ...",
+    "stage0.Sleeping2": ".........",
+    "stage0.Sleeping3": "...",
+
+    "stage1.Header":"Ruler of oneself",
+    "stage1.Intro.1":"You finally woke up!",
+    "stage1.Intro.2":"But who are you?",
+    "stage1.Intro.Name.1": "You try to remember your name...",
+    "stage1.Intro.Name.2": "You try HARD to remember your name...",
+    "stage1.Intro.Name.3": "You try REALLY HARD to remember your name...",
+    "stage1.Intro.Name.4": "You use 100% of your brain to remember your name...",
+    "stage1.Intro.3":"${0:name}... That must've been it!",
+    
+    "stage1.Intro.33":"Nothing comes to mind. You know nothing.",
+    "stage1.Intro.4":"In fact, the only thing you know is that you exist.",
+    "stage1.Intro.5":"Filled with ",
+    "stage1.Intro.6":"You look around. Wilderness surrounds you. ",
+
+    "button.gatherHerbs": "Gather Herbs",
+    "tooltip.gatherHerbs": "Find ${0:num} herbs",
+    "chat.gatherHerbs":"You gather some herbs...",
+    "resource.herb":"Herbs",
+
+    "placeholder":"KEKW"
 }

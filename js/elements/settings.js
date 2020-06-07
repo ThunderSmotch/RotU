@@ -68,7 +68,7 @@ function initStateOptions(){
     $('#wipeGame').click(()=>{
         if(confirm(_('settings.Wipe.description'))){
             StateManager.wipeState();
-            setTimeout(location.reload(), 1000);
+            setTimeout( () => location.reload(), 100);
         }
     });
 }

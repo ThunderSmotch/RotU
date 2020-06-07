@@ -51,6 +51,10 @@ body {
     border-width: 2px;
  }
 
+ #header > div {
+     display: inline;
+ }
+
  #headerTitle{
     font-weight: bold;
  }
@@ -179,6 +183,10 @@ body {
     );
     pointer-events: none;
     overflow: hidden;
+}
+
+.message{
+    margin-bottom: 5px;
 }
 
 .message::before {
