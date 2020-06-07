@@ -1,8 +1,13 @@
 import {Achievements} from './elements/achievements.js';
 
+
+
 export var StateManager = {
     updateResource: (key, qty) => updateResource(key, qty),
     unlockAchievement: (id) => unlockAchievement(id),
+    
+    unlockStage: (i) => unlockStage(i),
+    
     getState: () => {return gameState;},
     saveState: () => saveState(),
     loadState: () => loadState(),
@@ -16,8 +21,13 @@ var gameState = {
     storage: {
         herb: 0
     },
-    achievements:[]
+    achievements:[],
+    stage: 0,
 };
+
+function unlockStage(i){
+    gameState.stage = i;
+}
 
 function unlockAchievement(id){
     if(gameState['achievements'].includes(id))

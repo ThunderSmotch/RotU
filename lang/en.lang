@@ -9,6 +9,7 @@
     "stage0.Sleeping": "... ZzZzZzZzZ ...",
     "stage0.Sleeping2": ".........",
     "stage0.Sleeping3": "You finally wake up!",
+    "stage0.End": "You should probably gather some supplies...",
 
     "button.gatherHerbs": "Gather Herbs",
     "tooltip.gatherHerbs": "Find ${0:num} herbs",

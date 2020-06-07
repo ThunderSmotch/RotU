@@ -6,15 +6,19 @@ import {Tooltip} from '../elements/tooltip.js';
 import {Chat} from '../elements/chat.js';
 import {Storage} from '../elements/storage.js';
 
-export var Stage0 = {
+export var Stage1 = {
     init: () => init(),
+    exit: () => exit(),
 };
+
+function exit(){
+
+}
 
 //Initialize the layout of this stage
 function init(){
 
-    Chat.addMessage('You wake up')
-
+    //Super Under Test
     var testButton = Button.createCooldownButton('test', _('button.gatherHerbs'), '0.5s');
     var numHerbs = 1;
     $('#mainCol').append(testButton);

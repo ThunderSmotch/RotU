@@ -20,7 +20,7 @@ function init() {
         allowHTML: true,
         arrow: false,
         interactive: true,
-        placement: 'right',
+        placement: 'top',
         hideOnClick: false
     });
 }

@@ -7,11 +7,10 @@ import {Settings} from './elements/settings.js';
 import {Tooltip} from './elements/tooltip.js';
 import {Chat} from './elements/chat.js';
 import {Storage} from './elements/storage.js';
-
-import { Stage0 } from './stage/stage0.js';
+import {StageManager} from './stageManager.js';
 
 let version = "v0.1";
-//TODO: Achievements | Different styling for messages
+//TODO: Different styling for messages
 
 //TODO: Handle savefiles cross versions maybe using jquery.extend(true,...)
 
@@ -24,8 +23,8 @@ window.onload = function(){
     initModules();
 
     setUpdateIntervals();
-
-    Stage0.init();
+    
+    StageManager.selectStage();
 
     //Temporary artificial time on the loader
     this.setTimeout(()=>{

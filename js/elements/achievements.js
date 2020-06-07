@@ -6,6 +6,7 @@ export var Achievements = {
     unlock: (i) => unlock(i),
 }
 
+//Total number of achievements
 let achievementNumber = 5;
 
 function unlock(i){
@@ -45,13 +46,13 @@ function getAchievementHTML(id){
 }
 
 function getAchievementTooltipHidden(id){
-    return `<b>${_('achievements.'+id+'.Name')}</b>
+    return `<b>${id} - ${_('achievements.'+id+'.Name')}</b>
     <br>
     ${_('achievements.'+id+'.Tip')}`;
 }
 
 function getAchievementTooltip(id){
-    return `<b>${_('achievements.'+id+'.Name')}</b>
+    return `<b>${id} - ${_('achievements.'+id+'.Name')}</b>
     <br>
     ${_('achievements.'+id+'.Description')}`;
 }
