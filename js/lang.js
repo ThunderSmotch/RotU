@@ -44,6 +44,7 @@ function translate(key, args){
     var val = langJSON[key];
     try {
         if(val == undefined) val = enJSON[key];
+        if(val == undefined) val = 'N/A';
         val = parseText(val, args);
         return val;
     } catch (error) {

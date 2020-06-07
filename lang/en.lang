@@ -4,10 +4,20 @@
     "game.Chat.Clear":"clear log",
 
     "chat.gameLoaded": "Game Loaded",
+    "button.WakeUp": "Wake Up",
+    "tooltip.WakeUp": "You can't sleep forever!",
+    "stage0.Sleeping": "... ZzZzZzZzZ ...",
+    "stage0.Sleeping2": ".........",
+    "stage0.Sleeping3": "You finally wake up!",
 
     "button.gatherHerbs": "Gather Herbs",
     "tooltip.gatherHerbs": "Find ${0:num} herbs",
     "chat.gatherHerbs":"You gather some herbs...",
+
+    "achievements.Title":"Achievements",
+    "achievements.1.Name":"You're alive!",
+    "achievements.1.Description":"How else would you rule the Universe?",
+    "achievements.1.Tip":"Just wake up dude...",
 
     "settings.Title": "Settings",
     "settings.Lang": "Language:",

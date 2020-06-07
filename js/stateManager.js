@@ -1,5 +1,8 @@
+import {Achievements} from './elements/achievements.js';
+
 export var StateManager = {
     updateResource: (key, qty) => updateResource(key, qty),
+    unlockAchievement: (id) => unlockAchievement(id),
     getState: () => {return gameState;},
     saveState: () => saveState(),
     loadState: () => loadState(),
@@ -13,7 +16,17 @@ var gameState = {
     storage: {
         herb: 0
     },
+    achievements:[]
 };
+
+function unlockAchievement(id){
+    if(gameState['achievements'].includes(id))
+        return;
+
+    Achievements.unlock(id);
+    gameState['achievements'].push(id);
+    //TODO Popup for new achievement gained
+}
 
 function updateResource(key, qty){
     if(gameState['storage'].hasOwnProperty(key))
@@ -28,7 +41,7 @@ function saveState(){
 function loadState(){
     let state = localStorage.getItem('save');
     if(state != null){
-        gameState = JSON.parse(atob(state));
+        $.extend(true, gameState, JSON.parse(atob(state)));
     }
 }
 

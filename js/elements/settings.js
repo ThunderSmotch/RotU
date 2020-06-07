@@ -10,7 +10,7 @@ function init(){
     $("body").append(getSettingsHTML());
 
     $("#settingsButton, #settingsToggle").click(()=>{
-        $("#settings").toggle();
+        $("#settings").toggle("fast");
     });
      
     initLangSelect();

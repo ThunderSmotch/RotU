@@ -4,7 +4,8 @@ export var Button = {
     },
     create: (id, text) => getButtonHTML(id, text),
 
-    createCooldownButton: (id, cd) => createCooldownButton(id, cd)
+    createCooldownButton: (id, text, cd) => createCooldownButton(id, text, cd),
+    createButton: (id, text) => createButton(id, text),
 }
 
 function getButtonHTML(id, text){
@@ -14,10 +15,10 @@ function getButtonHTML(id, text){
 //Creates a button of the type Cooldown (has a BG cooldown bar)
 function createCooldownButton(id, text, cd){
 
-    var newButton = $(Button.create(id, text)).click(function(){
+    let newButton = createButton(id, text).click(function(){
         
-        var button = $(this);
-        var buttonBG = $(this).children().eq(0);
+        let button = $(this);
+        let buttonBG = $(this).children().eq(0);
 
         buttonBG.css('animation-duration', cd);
         button.addClass('disabled');
@@ -29,5 +30,11 @@ function createCooldownButton(id, text, cd){
 
     });
 
+    return newButton;
+}
+
+//Creates a normal button
+function createButton(id, text){
+    let newButton = $(Button.create(id, text));
     return newButton;
 }

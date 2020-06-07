@@ -12,8 +12,8 @@ function initChat(){
 }
 
 function addMessage(msg){
-    let message = `<div class="message">${msg}</div>`;
-    $('#chat').prepend(message);
+    let message = $(`<div style="display: none;" class="message">${msg}</div>`);
+    message.prependTo('#chat').show('slow');
 }
 
 function clearChat(){

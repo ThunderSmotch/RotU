@@ -7,6 +7,7 @@ export var Footer = {
 
 function appendLinks(version){
     var links = [
+        `<a id='achievementsButton' href="#">Achievements</a> | `,
         `<a id='settingsButton' href="#">Settings</a> | `,
         `<a target='_blank' href='https://github.com/ThunderSmotch/RotU'>Github</a> | `,
         `<a target='_blank' href='https://discord.gg/q7xXT4U'>Discord</a> | `,
