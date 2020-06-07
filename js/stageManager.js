@@ -27,6 +27,7 @@ function selectStage(){
     try {
         stages[stage].init();
     } catch (error) {
-        console.log('ERROR Select stage:' + stage);   
+        console.log('ERROR Select stage:' + stage); 
+        console.log(error.name + ':' + error.message);  
     }
 }

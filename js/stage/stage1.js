@@ -18,20 +18,23 @@ function init(){
     Header.changeTitle(_('stage1.Header'));
 
     //Super Under Test
-    var testButton = Button.createCooldownButton('test', _('button.gatherHerbs'), '0.5s');
-    var numHerbs = 1;
+    var testButton = Button.createCooldownButton('test', _('button.gatherHerbs'), '0.5s', gatherHerbsClick);
     $('#mainCol').append(testButton);
 
-    testButton.click(()=>{
-        StateManager.updateResource('herb', numHerbs);
-        Storage.update();
-        Chat.addMessage(_('chat.gatherHerbs'));
-    });
-
-    Tooltip.addTooltip('#test', _('tooltip.gatherHerbs', numHerbs, numHerbs))
+    Tooltip.addTooltip('#test', _('tooltip.gatherHerbs', herbsPerClick()));
 }
 
 //Remove the layout of this stage
 function exit(){
 
+}
+
+function gatherHerbsClick(){
+    StateManager.updateResource('herb', herbsPerClick());
+    Storage.update();
+    Chat.addMessage(_('chat.gatherHerbs'));
+}
+
+function herbsPerClick(){
+    return 1;
 }

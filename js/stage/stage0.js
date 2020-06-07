@@ -20,9 +20,8 @@ function init(){
     $("#chatCol").toggle();
 
     //Intro Messages
-    let wakeButton = Button.createButton('wakeUp', _('button.WakeUp'));
+    let wakeButton = Button.createButton('wakeUp', _('button.WakeUp'), wakeUpButtonClick);
     $('#mainCol').append(wakeButton);
-    wakeButton.click(wakeUpButtonClick);
     Tooltip.addTooltip('#wakeUp', _('tooltip.WakeUp'));
 }
 

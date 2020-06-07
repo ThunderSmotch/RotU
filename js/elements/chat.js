@@ -1,6 +1,7 @@
 export var Chat = {
     init,
     addMessage,
+    clearChat,
 }
 
 //Initialize this singleton
