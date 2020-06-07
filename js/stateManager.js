@@ -2,16 +2,16 @@ import {Achievements} from './elements/achievements.js';
 import { Popup } from './elements/popup.js';
 
 export var StateManager = {
-    updateResource: (key, qty) => updateResource(key, qty),
-    unlockAchievement: (id) => unlockAchievement(id),
+    updateResource,
+    unlockAchievement,
     
-    unlockStage: (i) => unlockStage(i),
+    unlockStage,
     
+    saveState,
+    loadState,
+    wipeState,
+    importState,
     getState: () => {return gameState;},
-    saveState: () => saveState(),
-    loadState: () => loadState(),
-    wipeState: () => wipeState(),
-    importState: (state) => importState(state),
 }
 
 //Default game state
@@ -24,10 +24,12 @@ var gameState = {
     stage: 0,
 };
 
+//Change current stage
 function unlockStage(i){
     gameState.stage = i;
 }
 
+//Unlocks an achievement on the save and interface and creates a notification
 function unlockAchievement(id){
     if(gameState['achievements'].includes(id))
         return;
@@ -37,16 +39,19 @@ function unlockAchievement(id){
     Popup.createNotification('ach_not_'+id, Achievements.getUnlockNotification(id));
 }
 
+//Update a resource on the storage interface
 function updateResource(key, qty){
     if(gameState['storage'].hasOwnProperty(key))
         gameState['storage'][key] += qty;
 }
 
+//Save current game state to local storage
 function saveState(){
     let state = JSON.stringify(gameState);
     localStorage.setItem('save', btoa(state));
 }
 
+//Load game state from local storage
 function loadState(){
     let state = localStorage.getItem('save');
     if(state != null){
@@ -54,6 +59,7 @@ function loadState(){
     }
 }
 
+//Import game state from file
 function importState(state){
     if(state != null){
         let importedState = JSON.parse(atob(state));
@@ -69,6 +75,7 @@ function importState(state){
     }
 }
 
+//Remove saved game state on local storage
 function wipeState(){
     localStorage.removeItem('save');
 }

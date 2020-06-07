@@ -1,8 +1,8 @@
 import {StateManager} from '../stateManager.js';
 
 export var Storage = {
-    init: () => init(),
-    update: () => update(),
+    init,
+    update,
 }
 
 //Initialize storage div
@@ -25,12 +25,12 @@ function update(){
     }
 }
 
-//Returns storage HTML
+//Storage HTML
 function getStorageHTML(){
     return `${_('game.Storage')}<div id='storage'></div>`;
 }
 
-//Returns a resource's HTML
+//Resource HTML
 function getResourceHTML(name, qty=0){
     return `<div class='resource'><div id='${name}'>${_('resource.'+name)}</div><div class='resource_amount' id='${name}_amount'>${qty}</div></div>`
 }

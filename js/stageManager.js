@@ -6,10 +6,11 @@ import {Stage1} from './stage/stage1.js';
 let stages = [Stage0, Stage1];
 
 export var StageManager = {
-    selectStage: () => selectStage(),
-    unlockStage: (i) => unlockStage(i),
+    selectStage,
+    unlockStage,
 }
 
+//Unlock stage i by exiting the current one
 function unlockStage(i){
     try {
         stages[i-1].exit();
@@ -20,6 +21,7 @@ function unlockStage(i){
     }
 }
 
+//Read from save which stage should be initialized
 function selectStage(){
     let stage = StateManager.getState().stage;
     try {

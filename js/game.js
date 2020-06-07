@@ -11,9 +11,7 @@ import {Storage} from './elements/storage.js';
 import {StageManager} from './stageManager.js';
 
 let version = "v0.1";
-//TODO: Different styling for messages | Header
-
-//TODO: Add images to the achievements
+//TODO: Different styling for messages
 
 //TODO: Use flex to handle dynamic resolutions
 
@@ -31,9 +29,7 @@ window.onload = function(){
     this.setTimeout(()=>{
     $('#loader').css('display', 'none');
     }, 2000);
-
     //Game is loaded.
-    //Chat.addMessage(_('chat.gameLoaded'));
 }
 
 function initModules(){

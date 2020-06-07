@@ -3,8 +3,6 @@
     "game.Chat":"Log",
     "game.Chat.Clear":"clear log",
 
-    "chat.gameLoaded": "Game Loaded",
-
     "button.WakeUp": "Wake Up",
     "tooltip.WakeUp": "You can't sleep forever!",
     "stage0.Header":"Rule over your dreams.",

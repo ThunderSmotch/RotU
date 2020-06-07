@@ -3,9 +3,10 @@ import { StateManager } from '../stateManager.js';
 import {Popup} from './popup.js';
 
 export var Settings = {
-    init: () => init()
+    init,
 }
 
+//Initializes this singleton
 function init(){
 
     Popup.create('settings', getSettingsHTML());
@@ -17,20 +18,7 @@ function init(){
     initStateOptions();
 }
 
-function getSettingsHTML(){
-    return `<h3 style='display: inline-block;'>${_('settings.Title')}</h3>
-    <br>
-    <span>${_('settings.Lang')}</span>
-    <select name='langs' id='langSelect'></select>
-    <span>${_('settings.LangWarning')}</span>
-    <br>
-    <hr>
-    <input type="file" style="display: none;" id="fileInput"></input>
-    <a href='#' id='exportGame'>${_('settings.Export')}</a> | 
-    <a href='#' id='importGame'>${_('settings.Import')}</a> | 
-    <a href='#' id='wipeGame'>${_('settings.Wipe')}</a> |`;
-}
-
+//Initialize the Lang Select element
 function initLangSelect(){
     var select = $("#langSelect");
     //Add available lags to select
@@ -48,6 +36,7 @@ function initLangSelect(){
     });
 }
 
+//Initialize the Save options
 function initStateOptions(){
 
     //Export
@@ -79,7 +68,22 @@ function initStateOptions(){
     $('#wipeGame').click(()=>{
         if(confirm(_('settings.Wipe.description'))){
             StateManager.wipeState();
-            location.reload();
+            setTimeout(location.reload(), 1000);
         }
     });
+}
+
+//Settings DIV HTML
+function getSettingsHTML(){
+    return `<h3 style='display: inline-block;'>${_('settings.Title')}</h3>
+    <br>
+    <span>${_('settings.Lang')}</span>
+    <select name='langs' id='langSelect'></select>
+    <span>${_('settings.LangWarning')}</span>
+    <br>
+    <hr>
+    <input type="file" style="display: none;" id="fileInput"></input>
+    <a href='#' id='exportGame'>${_('settings.Export')}</a> | 
+    <a href='#' id='importGame'>${_('settings.Import')}</a> | 
+    <a href='#' id='wipeGame'>${_('settings.Wipe')}</a> |`;
 }

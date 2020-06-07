@@ -8,13 +8,9 @@ import {Storage} from '../elements/storage.js';
 import { Header } from '../elements/header.js';
 
 export var Stage1 = {
-    init: () => init(),
-    exit: () => exit(),
+    init,
+    exit,
 };
-
-function exit(){
-
-}
 
 //Initialize the layout of this stage
 function init(){
@@ -33,4 +29,9 @@ function init(){
     });
 
     Tooltip.addTooltip('#test', _('tooltip.gatherHerbs', numHerbs, numHerbs))
+}
+
+//Remove the layout of this stage
+function exit(){
+
 }

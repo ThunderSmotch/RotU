@@ -1,8 +1,8 @@
 export var Lang = {
-    init: () => init(),
-    loadLang: (lang) => loadLang(lang),
-    translate: (key, ...args) => translate(key, args),
-    getLang: (lang) => getLang()
+    init,
+    loadLang,
+    translate,
+    getLang,
 }
 
 //Available Languages
@@ -11,9 +11,8 @@ export var langs = {
     "pt":"Português"    
 }
 
-var currentLang = "en";
-var langJSON;
-var enJSON;
+let langJSON;
+let enJSON;
 
 //Initializes the Lang class with default parameters
 function init(){
@@ -40,7 +39,7 @@ function loadLang(lang){
 
 //Translates a key to string and returns it
 //If key does not exist then return the english text as fallback
-function translate(key, args){
+function translate(key, ...args){
     var val = langJSON[key];
     try {
         if(val == undefined) val = enJSON[key];

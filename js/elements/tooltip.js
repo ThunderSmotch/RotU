@@ -1,19 +1,10 @@
 export var Tooltip = {
-    init: () => init(),
-    addTooltip: (id, content) => addTooltip(id, content),
-    updateTooltip: (id, content) => updateTooltip(id, content),
+    init,
+    addTooltip,
+    updateTooltip,
 }
 
-function addTooltip(id, content){
-    tippy(id, {
-        content: content
-    });
-}
-
-function updateTooltip(id, content){
-    $(id).prop('_tippy').setContent(content);
-}
-
+//Initialize this singleton
 function init() {
     tippy.setDefaultProps({
         theme: 'rotu',
@@ -23,4 +14,16 @@ function init() {
         placement: 'top',
         hideOnClick: false
     });
+}
+
+//Add tooltip to given element id with given content
+function addTooltip(id, content){
+    tippy(id, {
+        content: content
+    });
+}
+
+//Update an existing tooltip for element id with given content
+function updateTooltip(id, content){
+    $(id).prop('_tippy').setContent(content);
 }

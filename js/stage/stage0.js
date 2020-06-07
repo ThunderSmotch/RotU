@@ -7,8 +7,8 @@ import { StageManager } from '../stageManager.js';
 import { Header } from '../elements/header.js';
 
 export var Stage0 = {
-    init: () => init(),
-    exit: () => exit(),
+    init,
+    exit,
 };
 
 //Initialize the layout of this stage

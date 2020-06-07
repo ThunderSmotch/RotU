@@ -1,10 +1,14 @@
 export var Footer = {
-    init: function(version){
-        appendLinks(version);
-        handleChangelogClick();
-    }
+    init,
 }
 
+//Initialize this singleton
+function init(version){
+    appendLinks(version);
+    handleChangelogClick();
+}
+
+//Append footer links to footer
 function appendLinks(version){
     var links = [
         `<a id='achievementsButton' href="#">Achievements</a> | `,
@@ -17,6 +21,7 @@ function appendLinks(version){
 }
 
 //TODO implement changelog popup
+//Changelog Click
 function handleChangelogClick(){
     $("#changelogButton").click(function(){
         console.log("Changelog Clicked.")

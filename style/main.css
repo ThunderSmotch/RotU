@@ -51,6 +51,10 @@ body {
     border-width: 2px;
  }
 
+ #headerTitle{
+    font-weight: bold;
+ }
+
 
 #main{
     position: relative;

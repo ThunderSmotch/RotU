@@ -1,6 +1,6 @@
 export var Popup = {
-    create: (id, content) => create(id, content),
-    createNotification: (id, content) => createNotification(id, content),
+    create,
+    createNotification,
 }
 
 function create(id, content){
