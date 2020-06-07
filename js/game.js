@@ -1,6 +1,7 @@
 import {Lang} from './lang.js';
 import {StateManager} from './stateManager.js';
 
+import {Header} from './elements/header.js';
 import {Footer} from './elements/footer.js';
 import {Achievements} from './elements/achievements.js';
 import {Settings} from './elements/settings.js';
@@ -10,7 +11,7 @@ import {Storage} from './elements/storage.js';
 import {StageManager} from './stageManager.js';
 
 let version = "v0.1";
-//TODO: Different styling for messages | Popups for new achievement gained on the Stage Manager | Header
+//TODO: Different styling for messages | Header
 
 //TODO: Add images to the achievements
 
@@ -40,6 +41,7 @@ function initModules(){
     window._ = Lang.translate;
 
     Tooltip.init();
+    Header.init();
     Footer.init(version);
     Settings.init();
     Achievements.init();

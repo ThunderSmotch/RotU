@@ -18,7 +18,10 @@ body {
     user-select: none;
 }
 
-.footer {
+/************************/
+/* FOOTER*/
+
+#footer {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -28,10 +31,26 @@ body {
     width: 100%;
 }
 
-.footer > a {
+#footer > a {
     margin-right: 10px;
     margin-left: 10px;
 }
+
+/************************/
+/* Header */
+ #header{
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 100%;
+    border-bottom: groove;
+    border-width: 2px;
+ }
+
 
 #main{
     position: relative;

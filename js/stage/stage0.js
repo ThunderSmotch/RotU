@@ -4,6 +4,7 @@ import {Button} from '../elements/button.js';
 import {Tooltip} from '../elements/tooltip.js';
 import {Chat} from '../elements/chat.js';
 import { StageManager } from '../stageManager.js';
+import { Header } from '../elements/header.js';
 
 export var Stage0 = {
     init: () => init(),
@@ -12,6 +13,8 @@ export var Stage0 = {
 
 //Initialize the layout of this stage
 function init(){
+
+    Header.changeTitle(_('stage0.Header'));
 
     $("#inventoryCol").toggle();
     $("#chatCol").toggle();

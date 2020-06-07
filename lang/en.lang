@@ -4,12 +4,16 @@
     "game.Chat.Clear":"clear log",
 
     "chat.gameLoaded": "Game Loaded",
+
     "button.WakeUp": "Wake Up",
     "tooltip.WakeUp": "You can't sleep forever!",
+    "stage0.Header":"Rule over your dreams.",
     "stage0.Sleeping": "... ZzZzZzZzZ ...",
     "stage0.Sleeping2": ".........",
     "stage0.Sleeping3": "You finally wake up!",
     "stage0.End": "You should probably gather some supplies...",
+
+    "stage1.Header":"Rule over yourself.",
 
     "button.gatherHerbs": "Gather Herbs",
     "tooltip.gatherHerbs": "Find ${0:num} herbs",

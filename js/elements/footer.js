@@ -13,7 +13,7 @@ function appendLinks(version){
         `<a target='_blank' href='https://discord.gg/q7xXT4U'>Discord</a> | `,
         `<a id='changelogButton' href="#">Rule over the Universe ${version}</a>`
     ];
-    $(".footer").append(links);
+    $("#footer").append(links);
 }
 
 //TODO implement changelog popup
