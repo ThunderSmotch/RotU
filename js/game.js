@@ -10,11 +10,11 @@ import {Storage} from './elements/storage.js';
 import {StageManager} from './stageManager.js';
 
 let version = "v0.1";
-//TODO: Different styling for messages
+//TODO: Different styling for messages | Popups for new achievement gained on the Stage Manager
 
-//TODO: Handle savefiles cross versions maybe using jquery.extend(true,...)
+//TODO: Add images to the achievements
 
-//TODO: Use flexbox to handle dynamic resolutions
+//TODO: Use flex to handle dynamic resolutions
 
 window.onload = function(){
     //Load game from local storage
