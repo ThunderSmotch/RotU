@@ -1,4 +1,5 @@
 import {Achievements} from './elements/achievements.js';
+import { Popup } from './elements/popup.js';
 
 export var StateManager = {
     updateResource: (key, qty) => updateResource(key, qty),
@@ -33,6 +34,7 @@ function unlockAchievement(id){
 
     Achievements.unlock(id);
     gameState['achievements'].push(id);
+    Popup.createNotification('ach_not_'+id, Achievements.getUnlockNotification(id));
 }
 
 function updateResource(key, qty){

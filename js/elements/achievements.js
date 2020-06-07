@@ -5,6 +5,7 @@ import {Popup} from './popup.js';
 export var Achievements = {
     init: () => init(),
     unlock: (i) => unlock(i),
+    getUnlockNotification: (i) => getUnlockNotification(i),
 }
 
 //Total number of achievements
@@ -32,6 +33,15 @@ function init(){
             unlock(i);       
     }
 
+}
+
+function getUnlockNotification(i){
+    return `
+    <div>Image</div>
+    <div><b>${_('achievements.Unlock')}</b>
+    <br><br>
+    ${_('achievements.'+i+'.Name')}</div>
+    `;
 }
 
 function getAchievementsHTML(){

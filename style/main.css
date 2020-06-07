@@ -183,6 +183,27 @@ body {
     background-color: white;
 }
 
+.notification {
+    border-style: solid;
+    border-width: 2px;
+
+    padding:20px;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    
+    display: flex;
+
+    z-index: 20;
+    background-color: white;
+}
+
+.notification > div {
+    margin: 5px;
+    text-align: center;
+}
+
 #settings{
     width: 30%;
 }
