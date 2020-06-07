@@ -243,10 +243,6 @@ body {
     align-items: center;
 }
 
-#achievementContainer:last-child {
-    flex-grow: 100;
-}
-
 .ach_locked{
     position: absolute;
     top:0;
@@ -268,4 +264,5 @@ body {
     border-style: solid;
     border-width: 1px;
     display: table;
+    color:white;
 }

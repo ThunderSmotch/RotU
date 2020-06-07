@@ -37,7 +37,8 @@ function init(){
 
 function getUnlockNotification(i){
     return `
-    <div>Image</div>
+    <div><img src="img/achievements/ach_${i}.png" alt="Ach. ${i}"
+    width="96" hieght="96"></img></div>
     <div><b>${_('achievements.Unlock')}</b>
     <br><br>
     ${_('achievements.'+i+'.Name')}</div>
@@ -51,7 +52,9 @@ function getAchievementsHTML(){
 }
 
 function getAchievementHTML(id){
-    return `<div id='${id}' class='achievement'>1<div class='ach_locked'>?</div></div>`;
+    return `<div id='${id}' class='achievement' 
+    style='background-image: url("img/achievements/${id}.png"), url("img/achievements/ach_0.png");'>
+    <div class='ach_locked'>?</div></div>`;
 }
 
 function getAchievementTooltipHidden(id){
