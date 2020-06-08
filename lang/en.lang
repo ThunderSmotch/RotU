@@ -36,15 +36,21 @@
     "stage1.Intro.Name.3": "You try REALLY HARD to remember your name...",
     "stage1.Intro.Name.4": "You use 100% of your brain to remember your name...",
     "stage1.Intro.3":"${0:name}... That must've been it!",
-    
-    "stage1.Intro.33":"Nothing comes to mind. You know nothing.",
-    "stage1.Intro.4":"In fact, the only thing you know is that you exist.",
-    "stage1.Intro.5":"Filled with ",
-    "stage1.Intro.6":"You look around. Wilderness surrounds you. ",
+    "stage1.Intro.4":"Other than your name you know nothing. Better look around.",
 
-    "button.gatherHerbs": "Gather Herbs",
-    "tooltip.gatherHerbs": "Find ${0:num} herbs",
-    "chat.gatherHerbs":"You gather some herbs...",
+    "button.Explore":"Explore around",
+    "tooltip.Explore":"Look around for useful things.",
+
+    "stage1.Explore.1":"There is a dense forest around you. The herbs on the floor might prove themselves useful.",
+    "stage1.Explore.2":"You hear the rumbling noise of water in the distance.",
+    "stage1.Explore.3":"Whilst walking towards the noise you discover an ancient ruined building, the perfect spot to store what you collect.",
+    "stage1.Explore.4":"The rumbling noise is now very noticeable.",
+    "stage1.Explore.5":"The water roars as it hits some rocks on the bottom of the waterfall you just found.",
+    "stage1.Explore.6":"Nearby you notice some berries growing on the wild bushes.",
+
+    "button.GatherHerbs": "Gather Herbs",
+    "tooltip.GatherHerbs": "Find ${0:num} herbs",
+    "chat.GatherHerbs":"You gather some herbs...",
     "resource.herb":"Herbs",
 
     "placeholder":"KEKW"

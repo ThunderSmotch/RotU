@@ -16,8 +16,8 @@ function init(){
 
     Header.changeTitle(_('stage0.Header'));
 
-    $("#inventoryCol").toggle();
-    $("#chatCol").toggle();
+    $("#inventoryCol").hide();
+    $("#chatCol").hide();
 
     //Intro Messages
     let wakeButton = Button.createButton('wakeUp', _('button.WakeUp'), wakeUpButtonClick);
@@ -49,7 +49,6 @@ function wakeUpButtonClick(){
             break;
         case 15:
             Chat.addMessage(_('stage0.Sleeping3'));
-            $('#inventoryCol').show('slow');
             Chat.clearChat();
             StateManager.unlockAchievement(1);
             StageManager.unlockStage(1);
