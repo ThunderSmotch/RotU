@@ -1,5 +1,6 @@
 //Stage 1 - Gathering Supplies
 import {StateManager} from '../stateManager.js';
+import {WindowManager} from '../windowManager.js';
 
 import {Button} from '../elements/button.js';
 import {Tooltip} from '../elements/tooltip.js';
@@ -15,16 +16,16 @@ export var Stage1 = {
 //Initialize the layout of this stage
 function init(){
 
-    $('#inventoryCol').hide();
-    
-    Header.changeTitle(_('stage1.Header'));
+    WindowManager.hideUI('inventoryCol');
+    WindowManager.changeHeaderTitle('stage1.Header');
+
     if(StateManager.getState().name == ''){
         introMessages();
     }
     else if(true){
         setupExploreButton();
     } else{
-        $('#inventoryCol').show();
+        WindowManager.showUI('inventoryCol');
     }
 
     //Super Under Test
@@ -67,16 +68,12 @@ function setupDrinkButton(){
 
 //Setup the gather herbs button
 function setupGatherHerbsButton(){
-    let gatherHerbsButton = Button.createCooldownButton('gatherHerbs', _('button.GatherHerbs'), '0.5s', gatherHerbsClick);
-    $('#mainCol').append(gatherHerbsButton);
-    Tooltip.addTooltip('#gatherHerbs', _('tooltip.GatherHerbs', herbsPerClick()));
+    WindowManager.createButton('gatherHerbs', gatherHerbsClick, 'mainCol', _('tooltip.gatherHerbs', herbsPerClick()), '0.5s');
 }
 
 //Setup the explore button
 function setupExploreButton(){
-    let exploreButton = Button.createCooldownButton('explore', _('button.Explore'), '10s', explore);
-    $('#mainCol').append(exploreButton);
-    Tooltip.addTooltip('#explore', _('tooltip.Explore'));
+    WindowManager.createButton('explore', explore, 'mainCol', _('tooltip.explore'), '10s');
 }
 
 //Segment 2
@@ -89,12 +86,12 @@ function chooseName(i=1){
     if(name === null){
         chooseName(i+1);
     } else {
-    Header.setName(name);
+    WindowManager.changeHeaderName(name);
     StateManager.setName(name);
-    Chat.addMessage(_('stage1.Intro.3', name), 1);
+    WindowManager.addChatMessage(_('stage1.Intro.3', name), 1)
     StateManager.unlockAchievement(2);
 
-    Chat.addMessage(_('stage1.Intro.4'), 2);
+    WindowManager.addChatMessage(_('stage1.Intro.4'), 2);
     setTimeout(setupExploreButton, 2000);
     }
 }
@@ -102,8 +99,8 @@ function chooseName(i=1){
 //Segment 1
 //Show intro messages for stage 1
 function introMessages(){
-    Chat.addMessage(_('stage1.Intro.1'), 3);
-    Chat.addMessage(_('stage1.Intro.2'), 6);
+    WindowManager.addChatMessage(_('stage1.Intro.1'), 3);
+    WindowManager.addChatMessage(_('stage1.Intro.2'), 6);
     setTimeout(() => {
         chooseName();    
     }, 10000);
@@ -114,7 +111,7 @@ function introMessages(){
 function gatherHerbsClick(){
     StateManager.updateResource('herb', herbsPerClick());
     Storage.update();
-    Chat.addMessage(_('chat.GatherHerbs'));
+    Chat.addMessage(_('chat.gatherHerbs'));
 }
 
 function herbsPerClick(){

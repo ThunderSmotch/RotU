@@ -1,10 +1,11 @@
 import {Achievements} from './elements/achievements.js';
-import { Popup } from './elements/popup.js';
+import {Popup} from './elements/popup.js';
 
 export var StateManager = {
     updateResource,
     unlockAchievement,
     setName,
+    setUI,
 
     unlockStage,
     
@@ -17,14 +18,28 @@ export var StateManager = {
 
 //Default game state
 var gameState = {
+    version: 1,
     rotu: true,
     storage: {
         herb: 0
     },
     achievements:[],
+    ui:{
+        inventoryCol: true,
+        chatCol: true,
+    },
+    buttons:{
+        wakeup: false,
+        herbs: false,
+    },
     stage: 0,
     name: "",
 };
+
+function setUI(key, value){
+    if(gameState['ui'].hasOwnProperty(key))
+        gameState['ui'][key] = value;
+}
 
 //Set player name
 function setName(name){

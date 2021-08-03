@@ -1,10 +1,7 @@
 //Stage 0 - Wake up!
 import {StateManager} from '../stateManager.js';
-import {Button} from '../elements/button.js';
-import {Tooltip} from '../elements/tooltip.js';
-import {Chat} from '../elements/chat.js';
-import { StageManager } from '../stageManager.js';
-import { Header } from '../elements/header.js';
+import {WindowManager} from '../windowManager.js';
+import {StageManager} from '../stageManager.js';
 
 export var Stage0 = {
     init,
@@ -13,24 +10,21 @@ export var Stage0 = {
 
 //Initialize the layout of this stage
 function init(){
+    WindowManager.changeHeaderTitle('stage0.Header');
 
-    Header.changeTitle(_('stage0.Header'));
-
-    $("#inventoryCol").hide();
-    $("#chatCol").hide();
+    WindowManager.hideUI("inventoryCol");
+    WindowManager.hideUI("chatCol");
 
     //Intro Messages
-    let wakeButton = Button.createButton('wakeUp', _('button.WakeUp'), wakeUpButtonClick);
-    $('#mainCol').append(wakeButton);
-    Tooltip.addTooltip('#wakeUp', _('tooltip.WakeUp'));
+    WindowManager.createButton('wakeUp', wakeUpButtonClick, 'mainCol', _('tooltip.wakeUp'));
 }
 
 //Remove the layout of this stage
 function exit(){
-    $('#wakeUp').remove();
+    WindowManager.removeButton('wakeUp');
 }
 
-//What happens when you click the Wake Up button
+//When you click the Wake Up button
 function wakeUpButtonClick(){
 
     if(typeof wakeUpButtonClick.clicks == 'undefined'){
@@ -41,20 +35,20 @@ function wakeUpButtonClick(){
   
     switch (wakeUpButtonClick.clicks) {
         case 1:
-            $("#chatCol").show('slow');
-            Chat.addMessage(_('stage0.Sleeping'));
+            WindowManager.showUI('chatCol');
+            WindowManager.addChatMessage(_('stage0.Sleeping'));
             break;
         case 5:
-            Chat.addMessage(_('stage0.Sleeping2'));
+            WindowManager.addChatMessage(_('stage0.Sleeping2'));
             break;
         case 15:
-            Chat.addMessage(_('stage0.Sleeping3'));
-            Chat.clearChat();
+            WindowManager.addChatMessage(_('stage0.Sleeping3'));
+            WindowManager.clearChat();
             StateManager.unlockAchievement(1);
             StageManager.unlockStage(1);
             break;
         default:
-            Chat.addMessage(_('stage0.Sleeping'));
+            WindowManager.addChatMessage(_('stage0.Sleeping'));
             break;
     }
 }

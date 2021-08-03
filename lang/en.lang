@@ -21,16 +21,16 @@
     "settings.Wipe": "Wipe Save",
     "settings.Wipe.description": "Will wipe ALL your progress and restart you over. Are you sure?",
     
-    "button.WakeUp": "Wake Up",
-    "tooltip.WakeUp": "You can't sleep forever!",
     "stage0.Header":"Ruler of your dreams",
     "stage0.Sleeping": "... ZzZzZzZzZ ...",
     "stage0.Sleeping2": ".........",
     "stage0.Sleeping3": "...",
+    "button.wakeUp": "Wake Up",
+    "tooltip.wakeUp": "You can't sleep forever!",
 
     "stage1.Header":"Ruler of oneself",
     "stage1.Intro.1":"You finally woke up!",
-    "stage1.Intro.2":"But who are you?",
+    "stage1.Intro.2":"But... who are you?",
     "stage1.Intro.Name.1": "You try to remember your name...",
     "stage1.Intro.Name.2": "You try HARD to remember your name...",
     "stage1.Intro.Name.3": "You try REALLY HARD to remember your name...",
@@ -38,8 +38,8 @@
     "stage1.Intro.3":"${0:name}... That must've been it!",
     "stage1.Intro.4":"Other than your name you know nothing. Better look around.",
 
-    "button.Explore":"Explore around",
-    "tooltip.Explore":"Look around for useful things.",
+    "button.explore":"Explore around",
+    "tooltip.explore":"Look around for useful things.",
 
     "stage1.Explore.1":"There is a dense forest around you. The herbs on the floor might prove themselves useful.",
     "stage1.Explore.2":"You hear the rumbling noise of water in the distance.",
@@ -48,9 +48,9 @@
     "stage1.Explore.5":"The water roars as it hits some rocks on the bottom of the waterfall you just found.",
     "stage1.Explore.6":"Nearby you notice some berries growing on the wild bushes.",
 
-    "button.GatherHerbs": "Gather Herbs",
-    "tooltip.GatherHerbs": "Find ${0:num} herbs",
-    "chat.GatherHerbs":"You gather some herbs...",
+    "button.gatherHerbs": "Gather Herbs",
+    "tooltip.gatherHerbs": "Find ${0:num} herbs",
+    "chat.gatherHerbs":"You gather some herbs...",
     "resource.herb":"Herbs",
 
     "placeholder":"KEKW"
