@@ -14,8 +14,8 @@ export var WindowManager = {
 
     hideUI,
     showUI,
-    createButton,
-    removeButton,
+    updateUI,
+
 }
 
 function getUI(){
@@ -46,34 +46,23 @@ function clearChat(){
 //Hides an UI element
 function hideUI(key){
     $("#"+key).hide();
-
-    StateManager.setUI(key, false);
 }
 
 //Shows an UI element
 function showUI(key){
     $("#"+key).show('slow');
-
-    StateManager.setUI(key, true);
 }
 
-//Creates a button and appends it to parent
-function createButton(key, onclick, parent, tooltip, cd=''){
-    let button;
-    if (cd == '')
-        button = Button.createButton(key, _('button.' + key), onclick);
-    else
-        button = Button.createCooldownButton(key, _('button.' + key), cd, onclick);
-
-    $('#' + parent).append(button);
-    Tooltip.addTooltip('#' + key, tooltip);
-
-    StateManager.setUI(key, true);
-}
-
-//Removes a button from the UI
-function removeButton(key){
-    $('#' + key).remove();
-
-    StateManager.setUI(key, false);
+//Updates the UI according to the current game state
+function updateUI(){
+    let UIstate = StateManager.getState()['ui'];
+    
+    Object.keys(UIstate).forEach(key => {
+        if (UIstate[key] == true)
+            showUI(key);
+        else if (UIstate[key] == false)
+            hideUI(key);
+        else
+            console.log("ERROR LOADING UI:" + key);
+    });
 }

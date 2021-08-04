@@ -1,5 +1,6 @@
 import {Achievements} from './elements/achievements.js';
 import {Popup} from './elements/popup.js';
+import { WindowManager } from './windowManager.js';
 
 export var StateManager = {
     updateResource,
@@ -25,20 +26,31 @@ var gameState = {
     },
     achievements:[],
     ui:{
-        inventoryCol: true,
-        chatCol: true,
-    },
-    buttons:{
-        wakeup: false,
-        herbs: false,
+        inventoryCol: false,
+        chatCol: false,
+
+        wakeUp: true,
+        explore: false,
+        gatherHerbs: false,
     },
     stage: 0,
     name: "",
 };
 
+//Changes UI flags to check if they should be shown or not
 function setUI(key, value){
-    if(gameState['ui'].hasOwnProperty(key))
+    if(gameState['ui'].hasOwnProperty(key)){
         gameState['ui'][key] = value;
+        
+        if(value == true){
+            WindowManager.showUI(key);
+        } else if (value == false){
+            WindowManager.hideUI(key);
+        } else {
+            console.log("ERROR: No such UI key " + key);
+        }
+        
+    }
 }
 
 //Set player name

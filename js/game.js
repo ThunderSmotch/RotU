@@ -9,7 +9,9 @@ import {Tooltip} from './elements/tooltip.js';
 import {Chat} from './elements/chat.js';
 import {Storage} from './elements/storage.js';
 import {StageManager} from './stageManager.js';
-import { Keybinds } from './elements/keybinds.js';
+import {Buttons} from './buttons.js';
+import {Keybinds} from './elements/keybinds.js';
+import {WindowManager} from './windowManager.js';
 
 let version = "v0.1";
 //TODO: Different styling for messages
@@ -21,10 +23,11 @@ window.onload = function(){
     StateManager.loadState();
     
     initModules();
-
     setUpdateIntervals();
     
     StageManager.selectStage();
+    //TODO LOAD UI HERE
+    WindowManager.updateUI();
 
     //Temporary artificial time on the loader
     this.setTimeout(()=>{
@@ -44,6 +47,7 @@ function initModules(){
     Achievements.init();
     Chat.init();
     Storage.init();
+    Buttons.init();
 
     Keybinds.init();
 }
